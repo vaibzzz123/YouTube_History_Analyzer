@@ -34,11 +34,26 @@ def channels_list_by_username(service, **kwargs):
         results['items'][0]['snippet']['title'],
         results['items'][0]['statistics']['viewCount']))
 
+def get_history(service, **kwargs):
+  # results = service.channels.list(
+  #   **kwargs
+  # ).execute()
+
+  results = service.playlistItems().list(**kwargs).execute()
+
+  
+
+  print(results)
+
 if __name__ == '__main__':
   # When running locally, disable OAuthlib's HTTPs verification. When
   # running in production *do not* leave this option enabled.
   os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
   service = get_authenticated_service()
-  channels_list_by_username(service,
-      part='snippet,contentDetails,statistics',
-      forUsername='vaibzzz123')
+  # channels_list_by_username(service,
+  #     part='snippet,contentDetails,statistics',
+  #     forUsername='vaibzzz123')
+  get_history(service,
+      part='snippet',
+      playlistId='HL',
+      )
