@@ -131,3 +131,14 @@ dmypy.json
 # Google API secrets
 
 client_*.json
+
+watch-history.json
+
+.env
+
+channels.txt
+title_keywords.txt
+
+takeout-*.zip
+
+Takeout/

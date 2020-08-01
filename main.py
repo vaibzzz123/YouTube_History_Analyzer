@@ -17,7 +17,7 @@ CLIENT_SECRETS_FILE = "client_secret.json"
 # authenticated user's account and requires requests to use an SSL connection.
 SCOPES = ['https://www.googleapis.com/auth/youtube.force-ssl']
 API_SERVICE_NAME = 'youtube'
-API_VERSION = 'v3'
+API_VERSION = 'v2'
 
 def get_authenticated_service():
   flow = InstalledAppFlow.from_client_secrets_file(CLIENT_SECRETS_FILE, SCOPES)
